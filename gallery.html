@@ -23,18 +23,15 @@ body {
 	overflow-x: hidden;
 
 }
-
 header {
     /*    width: 100%;*/
     height: auto;
     position: sticky;
-    background-color: #fff;
     top: 0;
     /*    border: 1px solid red;*/
     z-index: 100;
+    background-color: #bdbdbd;
 }
-
-
 
 nav {
     color: var(--text-01);
@@ -49,10 +46,6 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
-nav .navigation-menu a:hover {
-            color: red; /* Change to your desired hover color */
-        }
-
 /*네비게이션바 조절*/
 nav ul.navigation-menu {
     display: flex;
@@ -88,6 +81,9 @@ nav .navigation-menu > li > a {
     justify-items: center;
 }
 
+nav .navigation-menu a:hover {
+            color: #fff;
+        }
 
 
 /*로고조절*/
@@ -107,6 +103,14 @@ nav > #logo img {
     width:50px;
     height: auto;
 }
+nav > #logo a {
+    font-size: 16px;
+    color: var(--text-01); /* Set text color to black */
+    text-decoration: none; /* Remove text decoration */
+}
+nav > #logo a:hover {
+            color: #fff;
+        }
 nav > #logo > span {
     font-size: 32px;
 }
@@ -263,10 +267,10 @@ footer {
               
             <div id="logo">
 
-               <img src="img/logo.png">
-               <li><a href="index.html"></a></li>
-                SIRI 
-            </div>
+                <img src="img/logo.png">
+                <li><a href="index.html">SIRI </a></li>
+                 
+             </div>
             <ul class="navigation-menu">
                 <li><a href="profile.html">PROFILE</a>
 
@@ -285,29 +289,29 @@ footer {
       
         </nav>
     </header>
-    <h1>Our New Products</h1>
+    <h1>GALLERY</h1>
     <div class="slider">
         <div class="slides">
-            <img class="slide" src="img/gallery2.jpg" alt="Slide 1">
+            <img class="slide" src="img/gallery1.jpg" alt="Slide 1">
             <img class="slide" src="img/gallery2.jpg" alt="Slide 2">
             <img class="slide"  src="img/gallery3.jpg" alt="Slide 3">
-            <img class="slide" src="https://via.placeholder.com/800x400?text=Slide%204" alt="Slide 4">
-            <img class="slide" src="https://via.placeholder.com/800x400?text=Slide%205" alt="Slide 5">
+            <img class="slide" src="img/gallery4.jpg" alt="Slide 4">
+            <img class="slide" src="img/gallery5.jpg" alt="Slide 5">
         </div>
         <span class="prev">&#10094;</span>
         <span class="next">&#10095;</span>
         <div class="thumbnails">
-            <img class="thumbnail" src="img/gallery2.jpg" alt="Thumbnail 1">
+            <img class="thumbnail" src="img/gallery1.jpg" alt="Thumbnail 1">
             <img class="thumbnail" src="img/gallery2.jpg" alt="Thumbnail 2">
             <img class="thumbnail" src="img/gallery3.jpg" alt="Thumbnail 3">
-            <img class="thumbnail" src="img/gallery2.jpg" alt="Thumbnail 4">
-            <img class="thumbnail" src="https://via.placeholder.com/100x50?text=5" alt="Thumbnail 5">
+            <img class="thumbnail" src="img/gallery4.jpg" alt="Thumbnail 4">
+            <img class="thumbnail" src="img/gallery5.jpg" alt="Thumbnail 5">
         </div>
     </div>
 
     <div class="video-container">
         <video class="video-player" controls>
-            <source src="img/리도어1.mp4" type="video/mp4">
+            <source src="img/videoplayer.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>

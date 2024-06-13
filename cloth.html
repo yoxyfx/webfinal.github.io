@@ -24,7 +24,7 @@
             height: auto;
             position: sticky;
             top: 0;
-            background-color: #fff;
+            background-color: #bdbdbd;
             z-index: 100;
         }
 
@@ -97,9 +97,15 @@
             color: var(--text-01);
             text-decoration: none;
         }
+        nav > #logo a:hover {
+            color: #fff;
+        }
 
         nav > #logo > span {
             font-size: 32px;
+        }
+        nav .navigation-menu a:hover {
+            color: #fff;
         }
 
         h1 {
@@ -109,7 +115,7 @@
 
         .product-grid-container {
             margin-left: 350px;
-            margin-top: 150px;
+            margin-top: 50px;
             margin-bottom: 200px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -124,7 +130,7 @@
         .container {
             width: 100%;
             position: relative;
-            padding-top: 133%; /* 4:3 Aspect Ratio */
+            padding-top: 150%; /* 4:3 Aspect Ratio */
             background-size: cover;
             background-position: center;
             cursor: pointer;
@@ -323,7 +329,7 @@
         <nav>
             <div id="logo">
                 <img src="img/logo.png" alt="Logo">
-                <li><a href="index.html">SIRI</a></li>
+                <a href="index.html">SIRI</a>
             </div>
             <ul class="navigation-menu">
                 <li><a href="profile.html">PROFILE</a></li>
