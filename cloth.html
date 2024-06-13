@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: var(--hover-timing);
+            background: var(--light-01);
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: auto;
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            z-index: 100;
+        }
+
+        nav {
+            color: var(--text-01);
+            font-weight: 600;
+            height: 64px;
+            background: var(--light-01);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--pg-margin);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            text-decoration: none;
+        }
+
+        nav ul.navigation-menu {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            justify-content: center;
+            position: relative;
+            top: 0;
+            margin-left: 500px;
+        }
+
+        nav .navigation-menu a {
+            font-size: 16px;
+            text-decoration: none;
+            color: var(--text-01);
+            list-style: none;
+        }
+
+        nav .navigation-menu > li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav .navigation-menu > li > a {
+            position: relative;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav > #logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            grid-gap: 8px;
+            line-height: 100%;
+            margin-left: 200px;
+            width: 50px;
+            height: auto;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        nav > #logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav > #logo a {
+            font-size: 16px;
+            color: var(--text-01);
+            text-decoration: none;
+        }
+
+        nav > #logo > span {
+            font-size: 32px;
+        }
+
+        h1 {
+            margin-top: 3%;
+            margin-left: 11.5%;
+        }
+
+        .product-grid-container {
+            margin-left: 350px;
+            margin-top: 150px;
+            margin-bottom: 200px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            max-width: 960px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            position: relative;
+            padding-top: 133%; /* 4:3 Aspect Ratio */
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            box-shadow: 0 0 5px #000;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr 2fr 1fr;
+            background: rgba(77, 77, 77, .9);
+            color: #FEF5DF;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .items {
+            padding-left: 20px;
+            letter-spacing: 3px;
+        }
+
+        .head {
+            font-size: 30px;
+            line-height: 40px;
+            transform: translateY(40px);
+            transition: all 0.7s;
+        }
+
+        .head hr {
+            display: block;
+            width: 0;
+            border: none;
+            border-bottom: solid 2px #FEF5DF;
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            transition: all .5s;
+        }
+
+        .price {
+            font-size: 22px;
+            line-height: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s;
+        }
+
+        .price .old {
+            text-decoration: line-through;
+            color: rgba(77, 77, 77, 0.6);
+        }
+
+        .cart {
+            font-size: 12px;
+            opacity: 0;
+            letter-spacing: 1px;
+            font-family: 'Lato', sans-serif;
+            transform: translateY(40px);
+            transition: all 0.7s;
+        }
+
+        .cart i {
+            font-size: 16px;
+        }
+
+        .cart span {
+            margin-left: 10px;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .container:hover .overlay .head {
+            transform: translateY(0px);
+        }
+
+        .container:hover .overlay .head hr {
+            width: 75px;
+            transition-delay: 0.4s;
+        }
+
+        .container:hover .overlay .price {
+            transform: translateY(0px);
+            transition-delay: 0.3s;
+            opacity: 1;
+        }
+
+        .container:hover .overlay .cart {
+            transform: translateY(0px);
+            transition-delay: 0.6s;
+            opacity: 1;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 0 50px 0 0;
+            padding: 100px 50px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-container .footer-logo img {
+            width: 100px;
+            height: auto;
+            margin-left: 100px;
+        }
+
+        footer p {
+            margin: 50px 100px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-logo img, .logo img, .logoimg {
+                width: 20px;
+                height: auto;
+            }
+
+            .footer-container p {
+                font-size: 12px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-left: 0;
+            }
+
+            nav ul li a {
+                padding: 8px 10px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            nav > #logo {
+                margin-left: 0;
+            }
+
+            nav .navigation-menu {
+                margin-left: 0;
+            }
+
+            .product-grid-container {
+                margin: 20px 20px 20px 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 100%;
+                padding-top: 133%; /* Maintain 4:3 Aspect Ratio */
+            }
+
+            footer p {
+                font-size: 12px;
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-container .footer-logo {
+                margin-bottom: 20px;
+            }
+
+            .footer-container .footer-logo img {
+                width: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="img/logo.png" alt="Logo">
+                <li><a href="index.html">SIRI</a></li>
+            </div>
+            <ul class="navigation-menu">
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="toy.html">TOY</a></li>
+                <li><a href="food.html">FOOD</a></li>
+                <li><a href="cloth.html">CLOTH</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Cloth</h1>
+    <div class="product-grid-container">
+        <div class="container" style="background-image: url(img/cloth1.png);">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p>"MONG"CLER PADDING</p>
+                    <p class="new">₩345</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-image: url(img/cloth2.png);">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p>Purple Tee</p>
+                    <p class="new">₩345</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-image: url(img/cloth3.png);">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p>"Striped tee</p>
+                    <p class="new">₩345</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-image: url(img/cloth4.png);">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p>Coat</p>
+                    <p class="new">₩345</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-image: url(img/cloth5.png);">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p>White fur cloth</p>
+                    <p class="new">₩345</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-image: url(img/cloth6.png);">
+            <div class="overlay">
+                <div class="items"></div>
+                <div class="items head">
+                    <p>Checked dress</p>
+                    <p class="new">₩345</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Footer Logo">
+            </div>
+            <p>
+                <span>Seunghyun-Im</span><br>
+                <span>Copyright&copy; 2024 [Web Publishing] Seunghyun-Im, a student at Kaywon University of Arts. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
