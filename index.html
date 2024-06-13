@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            background: var(--light-01);
+            overflow-x: hidden;
+        }
+
+        header {
+            height: auto;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            color: var(--text-01);
+            font-weight: 600;
+            height: 64px;
+            background: var(--light-01);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--pg-margin);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav ul.navigation-menu {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            justify-content: center;
+            position: relative;
+            top: 0;
+            margin-left: 500px;
+        }
+
+        nav .navigation-menu a {
+            font-size: 16px;
+            text-decoration: none;
+            color: var(--text-01);
+        }
+
+        nav .navigation-menu > li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav .navigation-menu > li > a {
+            position: relative;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav > #logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            grid-gap: 8px;
+            line-height: 100%;
+            margin-left: 200px;
+            width: 50px;
+            height: auto;
+            list-style: none;
+        }
+
+        nav > #logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav > #logo > span {
+            font-size: 32px;
+        }
+
+        .content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: white;
+        }
+
+        .main {
+            flex: 1;
+            position: relative;
+        }
+
+        .video-background {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Optional: Add an overlay for better readability */
+            z-index: 0;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+            margin:0 50px 0 0;
+            padding: 100px 50px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-container .footer-logo img {
+            width: 100px;
+            height: auto;
+            margin-left: 100px;
+        }
+
+        footer p {
+            margin: 50px 100px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-logo img, .logo img, .logoimg {
+                width: 20px;
+                height: auto;
+            }
+
+            .footer-container p {
+                font-size: 12px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <img src="img/logo.png">
+                <li><a href="index.html"></a></li>
+                SIRI
+            </div>
+            <ul class="navigation-menu">
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="toy.html">TOY</a></li>
+                <li><a href="food.html">FOOD</a></li>
+                <li><a href="cloth.html">CLOTH</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content with Video Background -->
+    <div class="main">
+        <video autoplay muted loop class="video-background">
+            <source src="img/리도어1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="content">
+            <!-- Add your main content here -->
+            <h1>Welcome to My Website</h1>
+            <p>This is a sample text over the video background.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo.png">
+            </div>
+            <p>
+                <span>Seunghyun-Im</span><br>
+                <span>Copyright&copy; 2024 [Web Publishing] Seunghyun-Im, a student at Kaywon University of Arts. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
