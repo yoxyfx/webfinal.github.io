@@ -23,15 +23,18 @@ body {
 	overflow-x: hidden;
 
 }
+
 header {
     /*    width: 100%;*/
     height: auto;
     position: sticky;
+    background-color: #bdbdbd;
     top: 0;
     /*    border: 1px solid red;*/
     z-index: 100;
-    background-color: #bdbdbd;
 }
+
+
 
 nav {
     color: var(--text-01);
@@ -46,6 +49,10 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
+nav .navigation-menu a:hover {
+            color: #fff;
+        }
+
 /*네비게이션바 조절*/
 nav ul.navigation-menu {
     display: flex;
@@ -81,9 +88,6 @@ nav .navigation-menu > li > a {
     justify-items: center;
 }
 
-nav .navigation-menu a:hover {
-            color: #fff;
-        }
 
 
 /*로고조절*/
@@ -103,17 +107,12 @@ nav > #logo img {
     width:50px;
     height: auto;
 }
-nav > #logo a {
-    font-size: 16px;
-    color: var(--text-01); /* Set text color to black */
-    text-decoration: none; /* Remove text decoration */
-}
-nav > #logo a:hover {
-            color: #fff;
-        }
 nav > #logo > span {
     font-size: 32px;
 }
+nav > #logo a:hover {
+            color: #fff;
+   }
 h1{
     margin-top:3%;
     margin-left:11.5%;
@@ -311,7 +310,7 @@ footer {
 
     <div class="video-container">
         <video class="video-player" controls>
-            <source src="img/videoplayer.mp4" type="video/mp4">
+            <source src="img/리도어1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
