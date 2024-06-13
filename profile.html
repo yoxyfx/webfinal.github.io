@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+         * {
             box-sizing: border-box;
             padding: 0;
             margin: 0;
@@ -21,11 +21,11 @@
         }
 
         header {
-            height: auto;
             position: sticky;
             top: 0;
             z-index: 100;
             background-color: #bdbdbd;
+            width: 100%;
         }
 
         nav {
@@ -37,13 +37,9 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: 0 var(--pg-margin);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             z-index: 100;
-            text-decoration: none;
-        }
-        nav .navigation-menu a:hover {
-            color: #fff;
         }
 
         nav ul.navigation-menu {
@@ -52,15 +48,12 @@
             flex: 1;
             justify-content: center;
             position: relative;
-            top: 0;
-            margin-left: 500px;
         }
 
         nav .navigation-menu a {
             font-size: 16px;
             text-decoration: none;
             color: var(--text-01);
-            list-style: none;
         }
 
         nav .navigation-menu > li {
@@ -75,20 +68,18 @@
             height: 64px;
             display: flex;
             align-items: center;
-            justify-items: center;
+        }
+
+        nav .navigation-menu a:hover {
+            color: #fff;
         }
 
         nav > #logo {
             display: flex;
             flex-direction: row;
             align-items: center;
-            grid-gap: 8px;
-            line-height: 100%;
-            margin-left: 200px;
-            width: 50px;
-            height: auto;
-            list-style: none;
-            text-decoration: none;
+            gap: 8px;
+            margin-left: 20px;
         }
 
         nav > #logo img {
@@ -101,11 +92,9 @@
             color: var(--text-01);
             text-decoration: none;
         }
+
         nav > #logo a:hover {
             color: #fff;
-        }
-        nav > #logo > span {
-            font-size: 32px;
         }
 
         h1 {
@@ -195,22 +184,27 @@
             font-size: 16px;
             text-align: right;
         }
-
         @media screen and (max-width: 768px) {
-            nav {
-                padding: 0 10px;
+            .footer-logo img, .logo img, .logoimg {
+                width: 20px;
+                height: auto;
             }
 
-            nav ul.navigation-menu {
-                margin-left: 0;
+            .footer-container p {
+                font-size: 12px;
+            }
+
+            nav ul {
                 flex-direction: column;
-                align-items: center;
             }
 
-            nav #logo {
-                margin-left: 10px;
+            nav ul li a {
+                padding: 8px 10px;
             }
 
+            .main {
+                margin-top: 0;
+            }
             .card {
                 flex-direction: column;
                 width: 90%;
@@ -229,24 +223,17 @@
             .text-container {
                 padding: 20px;
             }
-
-            .footer-container .footer-logo img {
-                width: 30px;
-            }
-
-            footer p {
-                font-size: 12px;
-                margin: 20px;
-            }
         }
+
+        
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div id="logo">
-                <img src="img/logo.png">
-                <li><a href="index.html">SIRI</a></li>
+                <img src="img/logo.png" alt="Logo">
+                <a href="index.html">SIRI</a>
             </div>
             <ul class="navigation-menu">
                 <li><a href="profile.html">PROFILE</a></li>

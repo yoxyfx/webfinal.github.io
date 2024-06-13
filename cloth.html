@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+      * {
             box-sizing: border-box;
             padding: 0;
             margin: 0;
@@ -21,11 +21,11 @@
         }
 
         header {
-            height: auto;
             position: sticky;
             top: 0;
-            background-color: #bdbdbd;
             z-index: 100;
+            background-color: #bdbdbd;
+            width: 100%;
         }
 
         nav {
@@ -37,10 +37,9 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: 0 var(--pg-margin);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             z-index: 100;
-            text-decoration: none;
         }
 
         nav ul.navigation-menu {
@@ -49,15 +48,12 @@
             flex: 1;
             justify-content: center;
             position: relative;
-            top: 0;
-            margin-left: 500px;
         }
 
         nav .navigation-menu a {
             font-size: 16px;
             text-decoration: none;
             color: var(--text-01);
-            list-style: none;
         }
 
         nav .navigation-menu > li {
@@ -74,17 +70,16 @@
             align-items: center;
         }
 
+        nav .navigation-menu a:hover {
+            color: #fff;
+        }
+
         nav > #logo {
             display: flex;
             flex-direction: row;
             align-items: center;
-            grid-gap: 8px;
-            line-height: 100%;
-            margin-left: 200px;
-            width: 50px;
-            height: auto;
-            list-style: none;
-            text-decoration: none;
+            gap: 8px;
+            margin-left: 20px;
         }
 
         nav > #logo img {
@@ -97,14 +92,8 @@
             color: var(--text-01);
             text-decoration: none;
         }
-        nav > #logo a:hover {
-            color: #fff;
-        }
 
-        nav > #logo > span {
-            font-size: 32px;
-        }
-        nav .navigation-menu a:hover {
+        nav > #logo a:hover {
             color: #fff;
         }
 
@@ -237,7 +226,6 @@
             color: #fff;
             text-align: center;
             box-sizing: border-box;
-            margin: 0 50px 0 0;
             padding: 100px 50px;
         }
 
@@ -260,6 +248,8 @@
             text-align: right;
         }
 
+   
+
         @media screen and (max-width: 768px) {
             .footer-logo img, .logo img, .logoimg {
                 width: 20px;
@@ -272,27 +262,33 @@
 
             nav ul {
                 flex-direction: column;
-                margin-left: 0;
             }
 
             nav ul li a {
                 padding: 8px 10px;
             }
 
-            nav {
+            .main {
+                margin-top: 0;
+            }
+            .card {
                 flex-direction: column;
-                align-items: flex-start;
-                padding: 10px;
+                width: 90%;
+                height: auto;
+                margin: 20px auto;
             }
 
-            nav > #logo {
-                margin-left: 0;
+            .image-container {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #333;
+                padding-right: 0;
+                padding-bottom: 20px;
             }
 
-            nav .navigation-menu {
-                margin-left: 0;
+            .text-container {
+                padding: 20px;
             }
-
             .product-grid-container {
                 margin: 20px 20px 20px 20px;
                 grid-template-columns: 1fr;
@@ -301,25 +297,6 @@
             .container {
                 width: 100%;
                 padding-top: 133%; /* Maintain 4:3 Aspect Ratio */
-            }
-
-            footer p {
-                font-size: 12px;
-                text-align: center;
-                margin: 20px 0;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-container .footer-logo {
-                margin-bottom: 20px;
-            }
-
-            .footer-container .footer-logo img {
-                width: 50px;
             }
         }
     </style>

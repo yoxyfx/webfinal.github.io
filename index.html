@@ -11,26 +11,23 @@
             margin: 0;
         }
 
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
+            background: var(--light-01);
+            width: 100vw;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            background: var(--light-01);
-            overflow-x: hidden;
+            min-height: 100vh;
         }
 
         header {
-            height: auto;
             position: sticky;
             top: 0;
             z-index: 100;
             background-color: #bdbdbd;
+            width: 100%;
         }
 
         nav {
@@ -42,7 +39,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: 0 var(--pg-margin);
+            padding: 0 20px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             z-index: 100;
         }
@@ -53,8 +50,6 @@
             flex: 1;
             justify-content: center;
             position: relative;
-            top: 0;
-            margin-left: 500px;
         }
 
         nav .navigation-menu a {
@@ -76,6 +71,7 @@
             display: flex;
             align-items: center;
         }
+
         nav .navigation-menu a:hover {
             color: #fff;
         }
@@ -84,31 +80,43 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            grid-gap: 8px;
-            line-height: 100%;
-            margin-left: 200px;
-            width: 50px;
-            height: auto;
-            list-style: none;
+            gap: 8px;
+            margin-left: 20px;
         }
-        nav > #logo a:hover {
-            color: #fff;
-        }
+
         nav > #logo img {
             width: 50px;
             height: auto;
         }
 
-        nav > #logo > span {
-            font-size: 32px;
+        nav > #logo a {
+            font-size: 16px;
+            color: var(--text-01);
+            text-decoration: none;
         }
 
+        nav > #logo a:hover {
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 80px;
+            margin-top: 40%;
+            margin-left: 2%;
+        }
+       
         .content {
             flex: 1;
             position: relative;
             z-index: 1;
             padding: 20px;
             color: white;
+            width: 100%;
+            min-height: calc(100vh - 64px - 150px); /* Ensure the content fills the viewport minus the header and footer */
+        }
+        .content h1:hover{
+            color:#cbcbcb;
+            font-size: 90px;
         }
 
         .main {
@@ -118,9 +126,9 @@
 
         .video-background {
             position: absolute;
-            right: 0;
-            bottom: 0;
-            min-width: 100%; 
+            top: 0;
+            left: 0;
+            min-width: 100%;
             min-height: 100%;
             z-index: -1;
         }
@@ -130,19 +138,22 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3); /* Optional: Add an overlay for better readability */
+            height: 130%;
+            background: rgba(0, 0, 0, 0.3);
             z-index: 0;
         }
 
         footer {
             width: 100%;
             background-color: #333;
+            height: 100%;
             color: #fff;
             text-align: center;
             box-sizing: border-box;
-            margin:0 50px 0 0;
-            padding: 100px 50px;
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
         }
 
         .footer-container {
@@ -155,17 +166,17 @@
         .footer-container .footer-logo img {
             width: 100px;
             height: auto;
-            margin-left: 100px;
+            margin-left: 20px;
         }
 
         footer p {
-            margin: 50px 100px;
+            margin: 20px 20px;
             font-size: 16px;
             text-align: right;
         }
 
         @media screen and (max-width: 768px) {
-            .footer-logo img, .logo img, .logoimg {
+            .footer-logo img, .logo img {
                 width: 20px;
                 height: auto;
             }
@@ -181,6 +192,10 @@
             nav ul li a {
                 padding: 8px 10px;
             }
+
+            .main {
+                margin-top: 0;
+            }
         }
     </style>
 </head>
@@ -188,9 +203,8 @@
     <header>
         <nav>
             <div id="logo">
-                <img src="img/logo.png">
-                <li><a href="index.html"></a></li>
-                SIRI
+                <img src="img/logo.png" alt="Logo">
+                <a href="index.html">SIRI</a>
             </div>
             <ul class="navigation-menu">
                 <li><a href="profile.html">PROFILE</a></li>
@@ -202,30 +216,26 @@
         </nav>
     </header>
 
-    <!-- Main Content with Video Background -->
     <div class="main">
         <video autoplay muted loop class="video-background">
-            <source src="img/리도어1.mp4" type="video/mp4">
+            <source src="img/backgroundvideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
         <div class="content">
-            <!-- Add your main content here -->
-            <h1>Welcome to My Website</h1>
-            <p>This is a sample text over the video background.</p>
+            <h1>ABOUT SIRI, THE DOG</h1>
+         
         </div>
     </div>
 
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="img/logo.png">
+                <img src="img/logo.png" alt="Footer Logo">
             </div>
             <p>
                 <span>Seunghyun-Im</span><br>
-                <span>Copyright&copy; 2024 [Web Publishing] Seunghyun-Im, a student at Kaywon University of Arts. All rights reserved.</span>
+                <span>Copyright&copy; 2024 [Web Publishing] Seunghyun-Im, a student at Kaywon University of Arts. Allrights reserved.</span>
             </p>
         </div>
     </footer>
-</body>
-</html>

@@ -8,120 +8,101 @@
 
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    transition: var(--hover-timing);
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: var(--hover-timing);
+            background: var(--light-01);
+            width: 100vw;
+            overflow-x: hidden;
+        }
 
-    background: var(--light-01);
-	
-	width: 100vw;
-	overflow-x: hidden;
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #bdbdbd;
+            width: 100%;
+        }
 
-}
+        nav {
+            color: var(--text-01);
+            font-weight: 600;
+            height: 64px;
+            background: var(--light-01);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
 
-header {
-    /*    width: 100%;*/
-    height: auto;
-    position: sticky;
-    top: 0;
-    /*    border: 1px solid red;*/
-    z-index: 100;
-    background-color: #bdbdbd;
-}
+        nav ul.navigation-menu {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            justify-content: center;
+            position: relative;
+        }
 
+        nav .navigation-menu a {
+            font-size: 16px;
+            text-decoration: none;
+            color: var(--text-01);
+        }
 
+        nav .navigation-menu > li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-nav {
-    color: var(--text-01);
-    font-weight: 600;
-    height: 64px;
-    background: var(--light-01);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 var(--pg-margin);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    z-index: 100;
-}
-/*네비게이션바 조절*/
-nav ul.navigation-menu {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    justify-content: center;
-    position: relative;
-    top: 0;
-    margin-left:500px;
-}
+        nav .navigation-menu > li > a {
+            position: relative;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
 
-nav .navigation-menu a {
-    font-size: 16px;
-    text-decoration: none;
-    color: var(--text-01);
-
-}
-
-nav .navigation-menu > li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*    justify-items: center;*/
-}
-
-nav .navigation-menu > li > a {
-    position: relative;
-    /*    border: 1px solid purple;*/
-    padding: 0 20px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-}
-
-nav .navigation-menu a:hover {
+        nav .navigation-menu a:hover {
             color: #fff;
         }
 
+        nav > #logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            margin-left: 20px;
+        }
 
-/*로고조절*/
-nav > #logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    grid-gap: 8px;
-    line-height: 100%;
-    margin-left: 200px;
-    width:50px;
-    height: auto;
-    list-style: none;
-}
-nav > #logo img {
-  
-    width:50px;
-    height: auto;
-}
-nav > #logo a {
-    font-size: 16px;
-    color: var(--text-01); /* Set text color to black */
-    text-decoration: none; /* Remove text decoration */
-}
-nav > #logo a:hover {
+        nav > #logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav > #logo a {
+            font-size: 16px;
+            color: var(--text-01);
+            text-decoration: none;
+        }
+
+        nav > #logo a:hover {
             color: #fff;
         }
-nav > #logo > span {
-    font-size: 32px;
-}
-h1{
-    margin-top:3%;
-    margin-left:11.5%;
-}
+
+        h1 {
+            margin-top: 3%;
+            margin-left: 11.5%;
+        }
 
 .gallery {
           padding: 4rem 0;
@@ -238,31 +219,18 @@ footer {
 </head>
 <body>
     <header>
-      
         <nav>
-              
             <div id="logo">
-
-               <img src="img/logo.png">
-               <li><a href="index.html">SIRI </a></li>
-                
+                <img src="img/logo.png" alt="Logo">
+                <a href="index.html">SIRI</a>
             </div>
             <ul class="navigation-menu">
-                <li><a href="profile.html">PROFILE</a>
-
-                <li><a href="gallery.html">GALLERY</a>
-              
-                </li>
-                <li><a href="toy.html">TOY</a>
-                </li>
-                <li>
-                    <a href="food.html">FOOD</a>
-                </li>
-                <li>
-                    <a href="cloth.html">CLOTH</a>
-                </li>
+                <li><a href="profile.html">PROFILE</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="toy.html">TOY</a></li>
+                <li><a href="food.html">FOOD</a></li>
+                <li><a href="cloth.html">CLOTH</a></li>
             </ul>
-      
         </nav>
     </header>
 
