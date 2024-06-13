@@ -49,6 +49,10 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
+nav .navigation-menu a:hover {
+            color: red; /* Change to your desired hover color */
+        }
+
 /*네비게이션바 조절*/
 nav ul.navigation-menu {
     display: flex;
@@ -112,12 +116,13 @@ h1{
 }
         /* Slider container */
         .slider {
-            overflow: hidden;
-            width: 100%;
-            max-width: 800px; /* Increased max width for better visuals */
-            position: relative;
-            margin: auto; /* Center slider */
-        }
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px; /* Increase max width for larger slider */
+    position: relative;
+    margin: auto; /* Center slider */
+}
+
 
         /* Image list */
         .slides {
@@ -188,10 +193,11 @@ h1{
         }
 
         .video-player {
-            width: 100%;
-            max-width: 800px;
-            margin-top: 50px;
-        }
+    width: 100%;
+    max-width: 1000px; /* Increase max width for larger video player */
+    margin-top: 50px;
+}
+
 
         /* Responsive adjustments */
         @media (max-width: 600px) {
